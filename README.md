@@ -2,7 +2,7 @@
 
 > Create an Event handler function that call a given function with input value.
 
--   **Tiny:** ~**100 bytes** of [ES3](https://unpkg.com/linkvalye) gzipped
+-   **Tiny:** ~**199 bytes** of [ES3](https://unpkg.com/linkvalye) gzipped
 -   **Familiar:** it's just a function that does what you would have done manually
 -   **Standalone:** one function, no dependencies, works everywhere
 
