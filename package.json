@@ -15,7 +15,9 @@
     "test": "jest",
     "build": "microbundle --name linkState",
     "dev": "microbundle watch",
+    "size": "size-limit",
     "prebuild": "rimraf dist",
+    "postbuild": "npm run size",
     "prepublish": "npm run -s build",
     "release": "npm run build -s && git commit -am $npm_package_version && git tag $npm_package_version && git push --follow-tags && npm publish"
   },
@@ -36,6 +38,17 @@
     "@babel/preset-env": "^7.3.4",
     "babel-jest": "^24.5.0",
     "jest": "^24.5.0",
-    "microbundle": "^0.11.0"
+    "microbundle": "^0.11.0",
+    "size-limit": "^0.21.1"
+  },
+  "size-limit": [
+    {
+      "path": "./dist/linkvalue.js",
+      "webpack": false,
+      "limit": "230 B"
+    }
+  ],
+  "browser": {
+    "./index.js": "./dist/index.umd.js"
   }
 }
