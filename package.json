@@ -1,0 +1,30 @@
+{
+  "name": "linkvalue",
+  "amdName": "linkState",
+  "version": "0.0.1",
+  "description": "Link input value into functions",
+  "main": "dist/linkvalue.js",
+  "module": "dist/linkvalue.es.js",
+  "jsnext:main": "dist/linkvalue.es.js",
+  "umd:main": "dist/linkvalue.umd.js",
+  "source": "src/index.js",
+  "files": [
+    "dist",
+    "polyfill.js",
+    "polyfill.js.map"
+  ],
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "ridermansb",
+  "license": "MIT",
+  "dependencies": {
+    "dlv": "^1.1.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "babel-jest": "^24.5.0",
+    "jest": "^24.5.0"
+  }
+}
