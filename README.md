@@ -13,6 +13,7 @@
 -   [Installation](#installation)
 -   [How It Works](#how-it-works)
 -   [Usage](#usage)
+-   [Why](#why)
 -   [Contribute](#contribute)
 -   [Credits](#credits)
 -   [License](#license)
@@ -80,6 +81,15 @@ class Foo extends Component {
 }
 ```
 
+## Why
+
+The main reason is for supporting updates with [mobx-state-tree][mst] models.   
+This lib will made easy update models with inputs
+
+![example.png](example.png)
+
+That example, will update any related component once input has changed.
+
 * * *
 
 ## Contribute
@@ -125,3 +135,4 @@ However, I would like to thanks [Jason Miller](https://jasonformat.com/) for the
 [MIT License](LICENSE.md) © [Riderman de Sousa Barbosa](http://ridermansb.github.io/)
 
 [linkstate]: https://github.com/developit/linkstate
+[mst]: https://github.com/mobxjs/mobx-state-tree#identifiers
