@@ -1,5 +1,5 @@
 {
-  "name": "linkvalue",
+  "name": "@ridermansb/linkvalue",
   "amdName": "linkState",
   "version": "0.0.1",
   "description": "Link input value into functions",

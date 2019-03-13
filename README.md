@@ -22,13 +22,13 @@
 ## Installation
 
 ```sh
-npm install --save linkvalue
+npm install --save @ridermansb/linkvalue
 ```
 
 The [UMD](https://github.com/umdjs/umd) build is also available on [unpkg](https://unpkg.com/linkvalue/dist/linkvalue.umd.js):
 
 ```html
-<script src="//unpkg.com/linkvalue/dist/linkvalue.umd.js"></script>
+<script src="//unpkg.com/@ridermansb/linkvalue/dist/linkvalue.umd.js"></script>
 ```
 
 This exposes the `linkValue()` function as a global.
@@ -62,7 +62,7 @@ Notice how we didn't specify the event path - if omitted, `linkValue()` will use
 Standard usage is a function that returns an event handler that call your given function witn input value.
 
 ```js
-import linkValue from 'linkvalue';
+import linkValue from '@ridermansb/linkvalue';
 
 class Foo extends Component {
   setName(name) {
@@ -119,7 +119,6 @@ This project was created based on [linkstate][linkstate].
 The main reason to created another one was the dependencies. linkValue has no dependency of framework or lib, just function that call another function.
 
 However, I would like to thanks [Jason Miller](https://jasonformat.com/) for the incredible project 
-
 
 ## License
 
