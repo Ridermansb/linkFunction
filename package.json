@@ -9,14 +9,12 @@
   "umd:main": "dist/linkvalue.umd.js",
   "source": "src/index.js",
   "files": [
-    "dist",
-    "polyfill.js",
-    "polyfill.js.map"
+    "dist"
   ],
   "scripts": {
     "test": "jest"
   },
-  "author": "ridermansb",
+  "author": "Riderman de Sousa Barbosa <ridermansb@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "dlv": "^1.1.2"
