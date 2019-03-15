@@ -11,9 +11,9 @@ describe("linkFunction", function() {
 
   describe("linkFunction without eventPath argument", () => {
     let fn = jest.fn();
-    let linkFunction;
+    let linkedFunction;
     beforeEach(() => {
-      linkFunction = linkFunction(fn);
+      linkedFunction = linkFunction(fn);
     });
 
     it("should use value attribute on text input when no eventPath is supplied", () => {
@@ -21,7 +21,7 @@ describe("linkFunction", function() {
       element.type = "text";
       element.value = "newValue";
 
-      linkFunction({
+      linkedFunction({
         currentTarget: element,
         target: element
       });
@@ -34,7 +34,7 @@ describe("linkFunction", function() {
       checkboxElement.type = "checkbox";
       checkboxElement.checked = true;
 
-      linkFunction({
+      linkedFunction({
         currentTarget: checkboxElement,
         target: checkboxElement
       });
@@ -47,7 +47,7 @@ describe("linkFunction", function() {
       radioElement.type = "radio";
       radioElement.checked = true;
 
-      linkFunction({
+      linkedFunction({
         currentTarget: radioElement,
         target: radioElement
       });
@@ -58,15 +58,15 @@ describe("linkFunction", function() {
 
   describe("linkFunction with eventPath argument", () => {
     let fn = jest.fn();
-    let linkFunction;
+    let linkedFunction;
     beforeEach(() => {
-      linkFunction = linkFunction(fn, "nested.path");
+      linkedFunction = linkFunction(fn, "nested.path");
     });
 
     it("should give precedence to nested.path on event", () => {
       let event = { nested: { path: "nestedPathValueFromEvent" } };
 
-      linkFunction(event);
+      linkedFunction(event);
 
       expect(fn).toHaveBeenCalledWith(event.nested.path);
     });
