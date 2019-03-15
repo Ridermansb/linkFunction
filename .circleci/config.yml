@@ -45,7 +45,7 @@ jobs:
 
   deploy:
     <<: *defaults
-    context: NPM
+    context: npm
     steps:
       - add_ssh_keys:
           fingerprints:
