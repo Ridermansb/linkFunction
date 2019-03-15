@@ -22,7 +22,7 @@ jobs:
       - run: npm ci
       - run:
           name: Run tests
-          command: npm test && npm run size
+          command: npm test -- --ci --reporters=jest-junit && npm run size
 
       - save_cache:
           paths:
