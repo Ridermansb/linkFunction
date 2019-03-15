@@ -46,10 +46,10 @@ jobs:
           command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
       - run:
           name: Publish package
-          commands:
-            - git config --global user.email circleci@circleci
-            - git config --global user.name CircleCI
-            - npm run release
+          command: |
+            git config --global user.email circleci@circleci
+            git config --global user.name CircleCI
+            npm run release
 
 workflows:
   version: 2
