@@ -19,7 +19,7 @@
     "prebuild": "rimraf dist",
     "postbuild": "npm run size",
     "prepublish": "npm run -s build",
-    "release": "npm run build -s && git commit -am $npm_package_version && git tag $npm_package_version && git push --follow-tags && npm publish"
+    "release": "npm run build -s && git tag $npm_package_version && git push --tags && npm publish"
   },
   "author": "Riderman de Sousa Barbosa <ridermansb@gmail.com>",
   "bugs": {
