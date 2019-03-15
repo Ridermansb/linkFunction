@@ -1,19 +1,19 @@
-import linkValue from "./index";
+import linkFunction from "./index";
 
-describe("linkValue", function() {
+describe("linkFunction", function() {
   it("should be a function", () => {
-    expect(linkValue).toBeInstanceOf(Function);
+    expect(linkFunction).toBeInstanceOf(Function);
   });
 
   it("should produce a function", () => {
-    expect(linkValue(jest.fn())).toBeInstanceOf(Function);
+    expect(linkFunction(jest.fn())).toBeInstanceOf(Function);
   });
 
-  describe("linkValue without eventPath argument", () => {
+  describe("linkFunction without eventPath argument", () => {
     let fn = jest.fn();
     let linkFunction;
     beforeEach(() => {
-      linkFunction = linkValue(fn);
+      linkFunction = linkFunction(fn);
     });
 
     it("should use value attribute on text input when no eventPath is supplied", () => {
@@ -56,11 +56,11 @@ describe("linkValue", function() {
     });
   });
 
-  describe("linkValue with eventPath argument", () => {
+  describe("linkFunction with eventPath argument", () => {
     let fn = jest.fn();
     let linkFunction;
     beforeEach(() => {
-      linkFunction = linkValue(fn, "nested.path");
+      linkFunction = linkFunction(fn, "nested.path");
     });
 
     it("should give precedence to nested.path on event", () => {

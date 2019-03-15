@@ -1,8 +1,8 @@
-# linkValue
+# linkFunction
 
 > Create an Event handler function that call a given function with input value.
 
--   **Tiny:** ~**230 bytes** of [ES3](https://unpkg.com/linkvalye) gzipped
+-   **Tiny:** ~**230 bytes** of [ES3](https://unpkg.com/linkfunction) gzipped
 -   **Familiar:** it's just a function that does what you would have done manually
 -   **Standalone:** one function, no dependencies, works everywhere
 
@@ -23,47 +23,47 @@
 ## Installation
 
 ```sh
-npm install --save @ridermansb/linkvalue
+npm install --save linkfunction
 ```
 
-The [UMD](https://github.com/umdjs/umd) build is also available on [unpkg](https://unpkg.com/linkvalue/dist/linkvalue.umd.js):
+The [UMD](https://github.com/umdjs/umd) build is also available on [unpkg](https://unpkg.com/linkfunction/dist/linkfunction.umd.js):
 
 ```html
-<script src="//unpkg.com/@ridermansb/linkvalue/dist/linkvalue.umd.js"></script>
+<script src="//unpkg.com/linkfunction/dist/linkfunction.umd.js"></script>
 ```
 
-This exposes the `linkValue()` function as a global.
+This exposes the `linkFunction()` function as a global.
 
 * * *
 
 ## How It Works
 
-It's important to understand what linkValue does in order to use it comfortably.
+It's important to understand what linkFunction does in order to use it comfortably.
 
-**`linkValue(fn, [valuePath])`**
+**`linkFunction(fn, [valuePath])`**
 
 - `fn`: the function that will called with value as parameter
 - `valuePath`: _optional_ key/path into the event object at which to retrieve the new value
 
 
-Here's two equivalent event handlers, one created manually and one created with linkValue:
+Here's two equivalent event handlers, one created manually and one created with linkFunction:
 
 ```js
 handleInput = e => {
   myFn(e.target.value)
 }
 
-handleInput = linkValue(myFn)
+handleInput = linkFunction(myFn)
 ```
 
-Notice how we didn't specify the event path - if omitted, `linkValue()` will use the `checked` or `value` property of the event target, based on its type.
+Notice how we didn't specify the event path - if omitted, `linkFunction()` will use the `checked` or `value` property of the event target, based on its type.
 
 ## Usage
 
 Standard usage is a function that returns an event handler that call your given function witn input value.
 
 ```js
-import linkValue from '@ridermansb/linkvalue';
+import linkFunction from '@ridermansb/linkfunction';
 
 class Foo extends Component {
   setName(name) {
@@ -74,7 +74,7 @@ class Foo extends Component {
     return (
       <input
         value={obj.name}
-        onInput={linkValue(this.setName)}
+        onInput={linkFunction(this.setName)}
       />
     );
   }
@@ -111,8 +111,8 @@ Pull requests are the greatest contributions, so be sure they are focused in sco
 > Every byte counts! PR's can't be merged if they increase the output size much.
 
 -   Fork it!
--   Clone your fork: `git clone https://github.com/<your-username>/linkvalue`
--   Navigate to the newly cloned directory: `cd linkvalue`
+-   Clone your fork: `git clone https://github.com/<your-username>/linkfunction`
+-   Navigate to the newly cloned directory: `cd linkfunction`
 -   Create a new branch for the new feature: `git checkout -b my-new-feature`
 -   Install the tools necessary for development: `npm install`
 -   Make your changes.
@@ -126,7 +126,7 @@ Pull requests are the greatest contributions, so be sure they are focused in sco
 
 This project was created based on [linkstate][linkstate].
 
-The main reason to created another one was the dependencies. linkValue has no dependency of framework or lib, just function that call another function.
+The main reason to created another one was the dependencies. linkFunction has no dependency of framework or lib, just function that call another function.
 
 However, I would like to thanks [Jason Miller](https://jasonformat.com/) for the incredible project 
 

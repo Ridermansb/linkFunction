@@ -1,33 +1,33 @@
 {
-  "name": "@ridermansb/linkvalue",
-  "amdName": "linkState",
-  "version": "0.0.6",
-  "description": "Link input value into functions",
-  "main": "dist/linkvalue.js",
-  "module": "dist/linkvalue.es.js",
-  "jsnext:main": "dist/linkvalue.es.js",
-  "umd:main": "dist/linkvalue.umd.js",
+  "name": "linkfunction",
+  "amdName": "linkFunction",
+  "version": "0.0.11",
+  "description": "Link input value into function",
+  "main": "dist/linkfunction.js",
+  "module": "dist/linkfunction.es.js",
+  "jsnext:main": "dist/linkfunction.es.js",
+  "umd:main": "dist/linkfunction.umd.js",
   "source": "src/index.js",
   "files": [
     "dist"
   ],
   "scripts": {
     "test": "jest",
-    "build": "microbundle --name linkState",
+    "build": "microbundle --name linkFunction",
     "dev": "microbundle watch",
     "size": "size-limit",
     "prebuild": "rimraf dist",
     "postbuild": "npm run size",
     "prepublish": "npm run -s build",
-    "release": "npm run build -s && git tag $npm_package_version && git push --tags && npm publish"
+    "release": "npm run build -s && git tag $npm_package_version && git push --tags && npm publish --access=public"
   },
   "author": "Riderman de Sousa Barbosa <ridermansb@gmail.com>",
   "bugs": {
-    "url": "https://github.com/ridermansb/linkvalue/issues"
+    "url": "https://github.com/ridermansb/linkfunction/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ridermansb/linkvalue"
+    "url": "https://github.com/ridermansb/linkfunction"
   },
   "license": "MIT",
   "dependencies": {
@@ -44,7 +44,7 @@
   },
   "size-limit": [
     {
-      "path": "./dist/linkvalue.js",
+      "path": "./dist/linkfunction.js",
       "webpack": false,
       "limit": "230 B"
     }
