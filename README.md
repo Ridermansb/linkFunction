@@ -82,7 +82,7 @@ Notice how we didn't specify the event path - if omitted, `linkFunction()` will 
 Standard usage is a function that returns an event handler that call your given function witn input value.
 
 ```js
-import linkFunction from '@ridermansb/linkfunction';
+import linkFunction from 'linkfunction';
 
 class Foo extends Component {
   setName(name) {
