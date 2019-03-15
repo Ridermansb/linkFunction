@@ -12,6 +12,9 @@ defaults: &defaults
 jobs:
   test:
     <<: *defaults
+    environment:
+      JEST_JUNIT_OUTPUT_DIR: test-results
+      JEST_JUNIT_OUTPUT_NAME: results.xml
     steps:
       - checkout
       - restore_cache:
@@ -19,10 +22,18 @@ jobs:
             - v1-dependencies-{{ checksum "package.json" }}
             - v1-dependencies-
 
+      - run: npm run build
       - run: npm ci
       - run:
           name: Run tests
-          command: npm test -- --ci --reporters=jest-junit && npm run size
+          command: npm test -- --ci --reporters=default --reporters=jest-junit && npm run size
+
+      - store_artifacts:
+          path: test-results
+          destination: prefix
+
+      - store_test_results:
+          path: test-results
 
       - save_cache:
           paths:
@@ -38,6 +49,8 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/repo
+      - store_artifacts:
+          path: dist
       - add_ssh_keys:
           fingerprints:
             - "15:f3:c9:c6:37:9b:88:00:f3:f3:a3:b0:23:78:b9:67"

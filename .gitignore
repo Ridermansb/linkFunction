@@ -157,3 +157,4 @@ $RECYCLE.BIN/
 dist/
 .npmrc
 junit.xml
+test-results
