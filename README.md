@@ -45,6 +45,25 @@ It's important to understand what linkFunction does in order to use it comfortab
 - `fn`: the function that will called with value as parameter
 - `valuePath`: _optional_ key/path into the event object at which to retrieve the new value
 
+Check the javascript vanilla usage:
+
+```
+const linkfunction = require('linkfunction')
+
+const e = { // Will be your SyntheticEvent for input
+    target: {
+        nodeName: 'any',
+        type: 'text',
+        value: 'Riderman'
+    }
+}
+
+const setName = name => console.log(name)  // Output Riderman
+
+const handler = linkfunction(setName)
+
+handler(e)
+```
 
 Here's two equivalent event handlers, one created manually and one created with linkFunction:
 
