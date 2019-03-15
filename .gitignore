@@ -156,3 +156,4 @@ $RECYCLE.BIN/
 
 dist/
 .npmrc
+junit.xml
