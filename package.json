@@ -1,7 +1,7 @@
 {
   "name": "linkfunction",
   "amdName": "linkFunction",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "Link input value into function",
   "main": "dist/linkfunction.js",
   "module": "dist/linkfunction.es.js",
