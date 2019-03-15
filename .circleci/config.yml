@@ -21,9 +21,6 @@ jobs:
           keys:
             - v1-dependencies-{{ checksum "package.json" }}
             - v1-dependencies-
-      - add_ssh_keys:
-          fingerprints:
-            - "15:f3:c9:c6:37:9b:88:00:f3:f3:a3:b0:23:78:b9:67"
       - run: npm ci
       - run: npm run build
       - run:
@@ -48,7 +45,11 @@ jobs:
 
   deploy:
     <<: *defaults
+    context: NPM
     steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "15:f3:c9:c6:37:9b:88:00:f3:f3:a3:b0:23:78:b9:67"
       - attach_workspace:
           at: ~/repo
       - store_artifacts:
@@ -56,9 +57,6 @@ jobs:
       - run:
           name: Authenticate with registry
           command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
-      - add_ssh_keys:
-          fingerprints:
-            - "15:f3:c9:c6:37:9b:88:00:f3:f3:a3:b0:23:78:b9:67"
       - run:
           name: Publish package
           command: |
