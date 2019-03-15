@@ -47,7 +47,7 @@ It's important to understand what linkFunction does in order to use it comfortab
 
 Check the javascript vanilla usage:
 
-```
+```js
 const linkfunction = require('linkfunction')
 
 const e = { // Will be your SyntheticEvent for input
