@@ -49,6 +49,7 @@ jobs:
           command: |
             git config --global user.email circleci@circleci
             git config --global user.name CircleCI
+            npm version patch
             npm run release
 
 workflows:
