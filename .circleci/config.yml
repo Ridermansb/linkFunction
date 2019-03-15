@@ -70,6 +70,6 @@ workflows:
     jobs:
       - test
       - deploy:
-          context: npm
+          context: NPM
           requires:
             - test
