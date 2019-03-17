@@ -105,7 +105,13 @@ class Foo extends Component {
 The main reason is for supporting updates with [mobx-state-tree][mst] models.   
 This lib will made easy update models with inputs
 
-![example.png](example.png)
+```js
+import linkFunction from 'linkfunction';
+
+const InputName = observer(({ personModel }) => (
+  <input type="text" value={linkFunction(personModel.setName)} />
+))
+```
 
 That example, will update any related component once input has changed.
 

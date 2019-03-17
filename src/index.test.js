@@ -70,5 +70,14 @@ describe("linkFunction", function() {
 
       expect(fn).toHaveBeenCalledWith(event.nested.path);
     });
+
+    it("should call function when provide to get value", function() {
+      let event = { nested: { path: "nestedPathValueFromEvent" } };
+
+      
+      linkedFunction(event, e => e.nested.path);
+
+      expect(fn).toHaveBeenCalledWith(event.nested.path);
+    });
   });
 });
