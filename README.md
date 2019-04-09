@@ -1,4 +1,6 @@
 # linkFunction
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FRidermansb%2FlinkFunction.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FRidermansb%2FlinkFunction?ref=badge_shield)
+
 
 > Create an Event handler function that call a given function with input value.
 
@@ -161,3 +163,6 @@ However, I would like to thanks [Jason Miller](https://jasonformat.com/) for the
 
 [linkstate]: https://github.com/developit/linkstate
 [mst]: https://github.com/mobxjs/mobx-state-tree#identifiers
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FRidermansb%2FlinkFunction.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FRidermansb%2FlinkFunction?ref=badge_large)
