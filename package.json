@@ -5,6 +5,7 @@
   "description": "Link input value into function",
   "main": "dist/linkfunction.js",
   "module": "dist/linkfunction.es.js",
+  "exports": "./dist/linkfunction.modern.js",
   "jsnext:main": "dist/linkfunction.es.js",
   "umd:main": "dist/linkfunction.umd.js",
   "source": "src/index.js",
@@ -13,7 +14,7 @@
   ],
   "scripts": {
     "test": "jest",
-    "build": "microbundle --name linkFunction",
+    "build": "microbundle build --name linkFunction --strict --compress",
     "dev": "microbundle watch",
     "size": "size-limit",
     "prebuild": "rimraf dist",
@@ -36,17 +37,19 @@
   "devDependencies": {
     "@babel/core": "^7.3.4",
     "@babel/preset-env": "^7.3.4",
+    "@size-limit/preset-app": "^4.9.2",
+    "@size-limit/preset-small-lib": "^4.9.2",
     "babel-jest": "^26.2.2",
     "jest": "^26.2.2",
     "jest-junit": "^11.1.0",
-    "microbundle": "^0.12.3",
-    "size-limit": "^4.5.5"
+    "microbundle": "^0.13.0",
+    "size-limit": "^4.9.2"
   },
   "size-limit": [
     {
       "path": "./dist/linkfunction.js",
       "webpack": false,
-      "limit": "230 B"
+      "limit": "250 B"
     }
   ],
   "browser": {

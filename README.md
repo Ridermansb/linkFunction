@@ -4,7 +4,7 @@
 
 > Create an Event handler function that call a given function with input value.
 
--   **Tiny:** ~**230 bytes** of [ES3](https://unpkg.com/linkfunction) gzipped
+-   **Small.** **~250 bytes** (minified and gzipped) of [ES3](https://unpkg.com/linkfunction). No dependencies. [Size Limit](https://github.com/ai/size-limit) controls the size.
 -   **Familiar:** it's just a function that does what you would have done manually
 -   **Standalone:** one function, no dependencies, works everywhere
 
