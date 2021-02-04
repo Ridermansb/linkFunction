@@ -49,7 +49,22 @@
     {
       "path": "./dist/linkfunction.js",
       "webpack": false,
-      "limit": "250 B"
+      "limit": "300 B"
+    },
+    {
+      "path": "./dist/linkfunction.modern.js",
+      "webpack": false,
+      "limit": "230 B"
+    },
+    {
+      "path": "./dist/linkfunction.umd.js",
+      "webpack": false,
+      "limit": "350 B"
+    },
+    {
+      "path": "./dist/linkfunction.es.js",
+      "webpack": false,
+      "limit": "210 B"
     }
   ],
   "browser": {

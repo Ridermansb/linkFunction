@@ -1,10 +1,16 @@
 # linkFunction
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FRidermansb%2FlinkFunction.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FRidermansb%2FlinkFunction?ref=badge_shield)
+![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/ridermansb/linkFunction?sort=semver&style=for-the-badge)
+![npm (tag)](https://img.shields.io/npm/v/linkfunction/latest?style=for-the-badge)
+![npm](https://img.shields.io/npm/dm/linkfunction?style=for-the-badge)
+![GitHub issues by-label](https://img.shields.io/github/issues/ridermansb/linkfunction/bug?style=for-the-badge)
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/linkfunction?style=for-the-badge)
+![GitHub](https://img.shields.io/github/license/ridermansb/linkfunction?style=for-the-badge)
+![Libraries.io SourceRank](https://img.shields.io/librariesio/sourcerank/npm/linkFunction?style=for-the-badge)
 
 
 > Create an Event handler function that call a given function with input value.
 
--   **Small.** **~250 bytes** (minified and gzipped) of [ES3](https://unpkg.com/linkfunction). No dependencies. [Size Limit](https://github.com/ai/size-limit) controls the size.
+-   **Small.** **~300 bytes** (minified and gzipped) of [ES3](https://unpkg.com/linkfunction). No dependencies. [Size Limit](https://github.com/ai/size-limit) controls the size.
 -   **Familiar:** it's just a function that does what you would have done manually
 -   **Standalone:** one function, no dependencies, works everywhere
 
@@ -66,6 +72,7 @@ const handler = linkfunction(setName)
 
 handler(e)
 ```
+> https://runkit.com/ridermansb/linkfunction
 
 Here's two equivalent event handlers, one created manually and one created with linkFunction:
 
