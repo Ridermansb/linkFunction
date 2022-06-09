@@ -1,0 +1,38 @@
+name: dev-check
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  code-quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v2-beta
+        with:
+          node-version: '12'
+
+      - uses: actions/checkout@v2
+
+      - name: Cache node_modules
+        id: cache-node_modules
+        uses: actions/cache@v2.0.0
+        with:
+          path: |
+            ~/.npm
+            node_modules
+            **/node_modules
+            ${{ steps.npm-cache.outputs.dir }}
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: ${{ runner.os }}-node-
+
+      - name: Install dependencies
+        if: steps.cache-node_modules.outputs.cache-hit != 'true'
+        run: npm ci --prefer-offline --no-audit --progress=false
+
+      - name: Trunk Check
+        uses: trunk-io/trunk-action@v1
+        with:
+          trunk-token: ${{ secrets.TRUNK_TOKEN }}
+          check-mode: all
