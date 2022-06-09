@@ -1,6 +1,6 @@
 import linkFunction from "./index";
 
-describe("linkFunction", function() {
+describe("linkFunction", function () {
   it("should be a function", () => {
     expect(linkFunction).toBeInstanceOf(Function);
   });
@@ -23,7 +23,7 @@ describe("linkFunction", function() {
 
       linkedFunction({
         currentTarget: element,
-        target: element
+        target: element,
       });
 
       expect(fn).toHaveBeenCalledWith(element.value);
@@ -36,7 +36,7 @@ describe("linkFunction", function() {
 
       linkedFunction({
         currentTarget: checkboxElement,
-        target: checkboxElement
+        target: checkboxElement,
       });
 
       expect(fn).toHaveBeenCalledWith(checkboxElement.checked);
@@ -49,7 +49,7 @@ describe("linkFunction", function() {
 
       linkedFunction({
         currentTarget: radioElement,
-        target: radioElement
+        target: radioElement,
       });
 
       expect(fn).toHaveBeenCalledWith(radioElement.checked);
@@ -71,11 +71,10 @@ describe("linkFunction", function() {
       expect(fn).toHaveBeenCalledWith(event.nested.path);
     });
 
-    it("should call function when provide to get value", function() {
+    it("should call function when provide to get value", function () {
       let event = { nested: { path: "nestedPathValueFromEvent" } };
 
-      
-      linkedFunction(event, e => e.nested.path);
+      linkedFunction(event, (e) => e.nested.path);
 
       expect(fn).toHaveBeenCalledWith(event.nested.path);
     });

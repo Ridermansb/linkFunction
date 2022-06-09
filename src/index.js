@@ -6,8 +6,8 @@ import delve from "dlv";
  * @param {function} fn - Function that will be called with input value
  * @param {string} eventPath - A dot0notated key path to the value
  */
-export default function(fn, eventPath) {
-  return function(e) {
+export default function (fn, eventPath) {
+  return function (e) {
     let target = (e && e.target) || this;
     const value =
       typeof eventPath === "string"
